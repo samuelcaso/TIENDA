@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VULTERRY — ESPACIO</title>
+    <script src="https://aframe.io/releases/1.7.1/aframe.min.js"></script>
+</head>
+<body style="margin:0; overflow:hidden;">
+
+<a-scene
+    renderer="antialias:true; colorManagement:true; physicallyCorrectLights:true"
+    background="color:#040404">
+
+    <a-assets>
+        <a-asset-item id="espacio-model" src="RECURSOS/ESPACIO.gltf"></a-asset-item>
+    </a-assets>
+
+    <!-- El espacio -->
+    <a-entity
+        id="espacio"
+        gltf-model="#espacio-model"
+        position="0 0 0"
+        scale="0.5 0.5 0.5"
+        rotation="0 0 0">
+    </a-entity>
+
+    <!-- Luz — por si el material del GLB no es emissive -->
+    <a-entity light="type:ambient; color:#ffffff; intensity:0.8"></a-entity>
+    <a-entity light="type:directional; color:#ffffff; intensity:0.6" position="1 3 1"></a-entity>
+
+    <!-- Cámara, arrancando en el centro de la bola -->
+
+    <a-entity camera look-controls wasd-controls="acceleration:28" position="0 0 0"></a-entity>
+
+</a-scene>
+
+</body>
+</html>
